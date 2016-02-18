@@ -60,7 +60,7 @@
             //Act: runs the actual method that we are testing.
             $result = $test_Score->mainFormula(7,4,1776);
             //Assert tells our tests what to expect from the output of our method.
-            $this->assertEquals(81, $result);
+            $this->assertEquals(4, $result);
         }
 
 

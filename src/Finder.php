@@ -68,9 +68,12 @@ class Finder
         $d = $yf * 2;
         $e = floor($ys / 4);
 
-        $result = $dy + $b + $ys + $e + $c - $d;
+        $f = $dy + $b + $ys + $e + $c - $d;
+        $g = floor($f / 7);
+        $h = $g * 7;
+        $n = $f - $h;
 
-        return $result;
+        return $n;
     }
 
 
