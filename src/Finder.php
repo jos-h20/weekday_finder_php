@@ -6,11 +6,11 @@ class Finder
     private $year_first_digits;
     private $year_second_digits;
 
-    function __construct($input_month, $input_day, $input_year)
+    function __construct()
     {
-        $this->month = $input_month;
-        $this->day = $input_day;
-        $this->year = $input_year;
+        // $this->month = $input_month;
+        // $this->day = $input_day;
+        // $this->year = $input_year;
     }
     function setMonth($input_month)
     {
@@ -62,16 +62,25 @@ class Finder
         $ys = $this->setYearSecondDigits($input_year);
 
         $a = 13 * $m;
-        $ab = $a -1;
-        $b = floor($ab / 5);
-        $c = floor($yf / 4);
-        $d = $yf * 2;
-        $e = floor($ys / 4);
 
+        $ab = $a - 1;
+        var_dump($ab);
+        var_dump($ys);
+
+        $b = floor($ab / 5);
+        var_dump($b);
+        $c = floor($yf / 4);
+        var_dump($c);
+        $d = $yf * 2;
+        var_dump($d);
+        $e = floor($ys / 4);
+        var_dump($e);
         $f = $dy + $b + $ys + $e + $c - $d;
-        $g = floor($f / 7);
-        $h = $g * 7;
-        $n = $f - $h;
+        var_dump($f);
+        $n = $f % 7;
+        var_dump($n);
+        // $h = $g * 7;
+        // $n = $f - $h;
 
         if ($n == 0) {
             return "Sunday";
@@ -94,3 +103,5 @@ class Finder
 }
 
  ?>
+
+ <!-- everything works ok.  I need to figure out how to subtract a year when january and february are entered, otherwise those two months will always be off. -->

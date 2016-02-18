@@ -55,12 +55,12 @@
         function test_mainFormula()
         {
             //Arrange
-            $test_Score = new Finder(7,4,1776);
+            $test_Score = new Finder(8,17,2015);
 
             //Act: runs the actual method that we are testing.
-            $result = $test_Score->mainFormula(7,4,1776);
+            $result = $test_Score->mainFormula(8,17,2015);
             //Assert tells our tests what to expect from the output of our method.
-            $this->assertEquals("Thursday", $result);
+            $this->assertEquals("Monday", $result);
         }
 
 
