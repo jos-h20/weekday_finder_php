@@ -21,6 +21,10 @@ class Finder
             $m = 12;
         }   return $m;
     }
+    function setDay($input_day)
+    {
+        return $this->day = $input_day;
+    }
 }
 
  ?>
