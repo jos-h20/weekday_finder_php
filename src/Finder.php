@@ -20,7 +20,7 @@ class Finder
             $m = 11;
         } elseif ($input_month == 2) {
             $m = 12;
-        }   return $m;
+        }   return $this->month = $m;
     }
     function setDay($input_day)
     {
@@ -38,6 +38,42 @@ class Finder
         $second_digits = array_slice($year_array, 2, 3);
         return $this->year_second_digits = implode($second_digits);
     }
+    function getMonth()
+    {
+        return $this->month;
+    }
+    function getDay()
+    {
+        return $this->day;
+    }
+    function getYearFirstDigits()
+    {
+        return $this->year_first_digits;
+    }
+    function getYearSecondDigits()
+    {
+        return $this->year_second_digits;
+    }
+    function mainFormula($input_month,$input_day,$input_year)
+    {
+        $m = $this->setMonth($input_month);
+        $dy = $this->setDay($input_day);
+        $yf = $this->setYearFirstDigits($input_year);
+        $ys = $this->setYearSecondDigits($input_year);
+
+        $a = 13 * $m;
+        $ab = $a -1;
+        $b = floor($ab / 5);
+        $c = floor($yf / 4);
+        $d = $yf * 2;
+        $e = floor($ys / 4);
+
+        $result = $dy + $b + $ys + $e + $c - $d;
+
+        return $result;
+    }
+
+
 }
 
  ?>
