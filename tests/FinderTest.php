@@ -42,6 +42,16 @@
             //Assert tells our tests what to expect from the output of our method.
             $this->assertEquals(17, $result);
         }
+        function test_setYearSecondDigits()
+        {
+            //Arrange
+            $test_Score = new Finder(7,4,1776);
+
+            //Act: runs the actual method that we are testing.
+            $result = $test_Score->setYearSecondDigits(1776);
+            //Assert tells our tests what to expect from the output of our method.
+            $this->assertEquals(76, $result);
+        }
 
 
 

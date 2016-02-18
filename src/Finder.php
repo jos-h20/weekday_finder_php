@@ -32,6 +32,12 @@ class Finder
         $first_digits = array_slice($year_array, 0, 2);
         return $this->year_first_digits = implode($first_digits);
     }
+    function setYearSecondDigits($input_year)
+    {
+        $year_array = str_split($input_year);
+        $second_digits = array_slice($year_array, 2, 3);
+        return $this->year_second_digits = implode($second_digits);
+    }
 }
 
  ?>
