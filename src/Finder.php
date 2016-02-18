@@ -73,7 +73,21 @@ class Finder
         $h = $g * 7;
         $n = $f - $h;
 
-        return $n;
+        if ($n == 0) {
+            return "Sunday";
+        } elseif ($n == 1) {
+            return "Monday";
+        } elseif ($n == 2) {
+            return "Tuesday";
+        } elseif ($n == 3) {
+            return "Wednesday";
+        } elseif ($n == 4) {
+            return "Thursday";
+        } elseif ($n == 5) {
+            return "Friday";
+        } elseif ($n == 6) {
+            return "Saturday";
+        }
     }
 
 
