@@ -20,7 +20,7 @@ class Finder
             $m = 11;
         } elseif ($input_month == 2) {
             $m = 12;
-        }   return $this->month = $m;
+        }   return $m;
     }
     function setDay($input_day)
     {
@@ -58,14 +58,22 @@ class Finder
     {
         $m = $this->setMonth($input_month);
         $dy = $this->setDay($input_day);
-        $yf = $this->setYearFirstDigits($input_year);
-        $ys = $this->setYearSecondDigits($input_year);
+
+
+        if ($m == 11 || $m == 12) {
+            $yr = $input_year - 1;
+        }  else { $yr = $input_year;
+        }
+
+        $yf = $this->setYearFirstDigits($yr);
+        $ys = $this->setYearSecondDigits($yr);
 
         $a = 13 * $m;
 
         $ab = $a - 1;
         var_dump($ab);
         var_dump($ys);
+        var_dump($dy);
 
         $b = floor($ab / 5);
         var_dump($b);

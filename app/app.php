@@ -19,6 +19,7 @@
 		$input_day = $_GET['day'];
 		$input_year = $_GET['year'];
 
+        // I want a Finder with yellow eyes
 		$finder = new Finder;
 
 
